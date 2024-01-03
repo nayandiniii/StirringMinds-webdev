@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="images/x-icon" href="share.png">
+    <title>Nandini | Front-End</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Align elements vertically */
+            height: 100vh;
+            background: url(purple2.png);
+            background-size: cover;
+            overflow: auto; /* Enable scrolling for the body */
+        }
+
+        header {
+            margin-top: 0px; /* Adjust as needed */
+        }
+
+        .article-container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            line-height: 1.6;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 20px; /* Added margin for spacing between sections */
+        }
+
+        .custom-box {
+            position: absolute;
+            z-index: 1000;
+            display: none;
+            width: 220px;
+            border-radius: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid black;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sharing-options {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; /* Adjust as needed */
+            align-items: center; /* Adjust as needed */
+        }
+
+        .sharing-options button {
+            padding: 10px;
+            text-align: left;
+            border: none;
+            background-color: #AB5EE2;
+            cursor: pointer;
+            color: white;
+            outline: none;
+            transition: 0.2s;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+
+        .sharing-options button:hover {
+            background-color: #f8f8f8;
+            color: #AB5EE2;
+            border: 2px solid #AB5EE2;
+            transform: scale(1.1);
+        }
+
+        #selectedText {
+            border-radius: 7px;
+            background-color: white;
+            border: 2px solid black;
+            color: black;
+            padding: 5px;
+        }
+
+        footer {
+            margin-top: auto; /* Align at the bottom of the page */
+            text-align: center;
+            width: 100%;
+            margin-bottom: 0;
+            background-color: #AB5EE2;
+            color: #fff;
+            padding: 10px; /* Added padding for better visibility */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="Elayne.png" style="display: block; margin-top: 2000px;;">
+</header>
+
+<div class="article-container" id="article">
+    <p>In the vast expanse of the digital realm, where visual storytelling meets the artistry of photography, there exists a serene haven called Elayne. It is not merely a website but a curated collection of moments frozen in time, brought to life through the lens and the meticulous touch of creativity. As I embark on this visual journey, I invite you to immerse yourself in the enchanting world of Elayne.</p>
+    <p>Named after a muse that whispers tales of beauty and grace, Elayne is a testament to the belief that every photograph has a story to tell. The inception of this digital haven emerged from a desire to create a space where captured moments could transcend the boundaries of time. Each photograph housed within Elayne is a carefully crafted narrative, an encapsulation of emotions that linger in the air.</p>
+
+</div>
+
+<img src="1630999939623.jpg" height="400px" width="600px" style="display: block; margin: 0 auto; margin-bottom: 20px;">
+
+<img src="1661526100643 (1).jpg" height="400px" width="600px" style="display: block; margin: 0 auto; margin-bottom: 20px;">
+<div class="article-container" id="article">
+    <p>Upon entering Elayne, visitors are welcomed by a seamless blend of aesthetics and functionality. The interface, like a well-choreographed dance, guides the audience through a gallery adorned with images that tell stories of landscapes, portraits, and the intricacies of life. It serves as a digital canvas, inviting viewers to partake in a visual symphony where every click is a note and every photograph a melody.</p>
+    <p>"Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever… It remembers little things, long after you have forgotten everything." - Aaron Siskind</p>
+    <p>Elayne embodies the essence of visual storytelling. It goes beyond the mere act of capturing an image; it delves into the heart of the moment, extracting emotions, and weaving them into the fabric of time. Each photograph is a chapter, and collectively, they form a narrative that transcends the boundaries of pixels and screens.</p>
+    <p>The gallery is an eclectic mix of hues and tones, playing with contrasts and gradients, offering a visual feast that resonates with the soul. From the warmth of golden hour landscapes to the stark contrast of black and white portraiture, Elayne celebrates the diversity of moments, echoing the sentiment that beauty is found in the ordinary.</p>
+</div>
+
+<img src="IMG_20220721_211616.jpg" height="400px" width="600px" style="display: block; margin: 0 auto; margin-bottom: 20px;">
+<div class="article-container" id="article">
+    <p>Beyond its role as a digital gallery, Elayne serves as a canvas for creative exploration. The editing process is not just a technical endeavor but an artistic expression. From enhancing the play of light to the subtle dance of shadows, every edit is a brushstroke, adding depth and dimension to the visual narrative.</p>
+    <p>Elayne embraces the concept that photography is not merely an act of documentation but a medium to evoke emotions and provoke thought. It stands as a testimony to the idea that creativity knows no bounds, and each photograph is a canvas waiting to be painted with the strokes of imagination.</p>
+</div>
+
+<div class="custom-box" id="customBox">
+    <div id="selectedText"></div>
+    <div class="sharing-options">
+        <button id="twitterButton"><img src="twitter.png" height="20px" width="20px"></button>
+        <button id="whatsappButton"><img src="whatsapp.png" height="20px" width="20px"></button>
+        <button id="copyLinkButton"><img src="copy.png" height="20px" width="20px"></button>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const article = document.getElementById('article');
+        const customBox = document.getElementById('customBox');
+        const selectedTextDiv = document.getElementById('selectedText');
+        const twitterButton = document.getElementById('twitterButton');
+        const whatsappButton = document.getElementById('whatsappButton');
+        const copyLinkButton = document.getElementById('copyLinkButton');
+
+        article.addEventListener('mouseup', showCustomBox);
+
+        function showCustomBox(event) {
+            const selectedText = getSelectedText();
+
+            if (selectedText) {
+                const { pageX, pageY } = event;
+                selectedTextDiv.innerText = selectedText;
+                customBox.style.left = `${pageX}px`;
+                customBox.style.top = `${pageY}px`;
+                customBox.style.display = 'block';
+
+                twitterButton.onclick = () => shareOnTwitter(selectedText);
+                whatsappButton.onclick = () => shareOnWhatsApp(selectedText);
+                copyLinkButton.onclick = () => copyLink(selectedText);
+            } else {
+                customBox.style.display = 'none';
+            }
+        }
+
+        function getSelectedText() {
+            if (window.getSelection) {
+                return window.getSelection().toString();
+            } else if (document.selection && document.selection.type !== 'Control') {
+                return document.selection.createRange().text;
+            }
+            return '';
+        }
+
+        function shareOnTwitter(text) {
+            openShareWindow(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`);
+        }
+
+        function shareOnWhatsApp(text) {
+            const whatsappURL = `whatsapp://send?text=${encodeURIComponent(text)}`;
+            window.location.href = whatsappURL;
+            customBox.style.display = 'none';
+        }
+
+        function copyLink(selectedText) {
+            const dummyInput = document.createElement('textarea');
+            dummyInput.value = selectedText;
+            document.body.appendChild(dummyInput);
+            dummyInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummyInput);
+            alert(`Text copied: ${selectedText}`);
+        }
+
+
+
+        document.addEventListener('mousedown', (event) => {
+            if (!customBox.contains(event.target)) {
+                customBox.style.display = 'none';
+            }
+        });
+
+        function openShareWindow(url) {
+            window.open(url, '_blank');
+            customBox.style.display = 'none';
+        }
+    });
+</script>
+<footer>
+    <p>Created by @NandiniSharma <a target="_blank" href="https://drive.google.com/file/d/1Fh0eTTFZF_8pPoqXxXoNjN0_elQVm10j/view?usp=sharing">Resume</a></p>
+</footer>
+
+</body>
+</html>
